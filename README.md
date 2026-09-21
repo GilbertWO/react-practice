@@ -1,16 +1,27 @@
-# React + Vite
+# React Practice
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small React sandbox for practising the basics: components and state, client-side routing, fetching data from an API, and deploying from GitHub.
 
-Currently, two official plugins are available:
+**Live:** https://react-practice-sandy-omega.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What's in it
 
-## React Compiler
+- **Game (`/`)**: tic-tac-toe built with `useState`, with winner and draw detection.
+- **Posts (`/posts`)**: fetches 12 posts from [JSONPlaceholder](https://jsonplaceholder.typicode.com/) in a `useEffect` and renders them as cards, with loading and error states.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Stack
 
-## Expanding the ESLint configuration
+Vite, React 19, React Router, deployed on Vercel (auto-deploys on every push to `main`).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+Other scripts: `npm run build` (production build) and `npm run lint`.
+
+## Notes
+
+`vercel.json` rewrites every path to `index.html`, so opening or refreshing a route like `/posts` directly works instead of returning a 404.
